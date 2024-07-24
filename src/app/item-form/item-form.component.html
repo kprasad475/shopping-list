@@ -21,13 +21,11 @@
         <input matInput type="number" [(ngModel)]="item.quantity" name="quantity" required>
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-checkbox [(ngModel)]="item.reminder" name="reminder">Set Reminder</mat-checkbox>
-      </mat-form-field>
+      <mat-checkbox [(ngModel)]="item.reminder" name="reminder">Set Reminder</mat-checkbox>
 
       <div class="form-actions">
         <button mat-raised-button color="primary" type="submit">{{ isEdit ? 'Update' : 'Add' }}</button>
-        <button mat-button (click)="cancel()">Cancel</button>
+        <button mat-button type="button" (click)="cancel()">Cancel</button>
       </div>
     </form>
   </mat-card-content>

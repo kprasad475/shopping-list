@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ItemFormComponent } from '../item-form/item-form.component';
+import { animate, style, transition, trigger } from '@angular/animations';
 export interface ShoppingItem {
   id: number;
   name: string;
@@ -14,7 +15,18 @@ export interface ShoppingItem {
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
-  styleUrl: './shopping-list.component.css'
+  styleUrl: './shopping-list.component.css',
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('500ms', style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('500ms', style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class ShoppingListComponent  implements OnInit{
   items = [

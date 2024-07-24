@@ -6,16 +6,41 @@
 
 mat-card {
   padding: 16px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+mat-card:hover {
+  transform: scale(1.05);
 }
 
 .actions {
   margin-bottom: 16px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 mat-list-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 80px 10px;  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+mat-list-item:hover {
+  background-color: #f1f1f1;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-actions {
+  display: flex;
+  align-items: center;
 }
 
 mat-list-icon {
