@@ -1,1 +1,18 @@
-<p>item-form works!</p>
+<form (ngSubmit)="onSubmit()">
+    <label for="name">Item Name:</label>
+    <input id="name" [(ngModel)]="item.name" name="name" required>
+    
+    <label for="category">Category:</label>
+    <select id="category" [(ngModel)]="item.category" name="category" required>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+    
+    <label for="quantity">Quantity:</label>
+    <input id="quantity" [(ngModel)]="item.quantity" name="quantity" type="number" min="1" required>
+    
+    <label for="reminder">Set Reminder:</label>
+    <input id="reminder" [(ngModel)]="item.reminder" name="reminder" type="checkbox">
+    
+    <button type="submit">Add Item</button>
+  </form>
+  

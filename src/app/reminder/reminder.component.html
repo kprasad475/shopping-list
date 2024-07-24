@@ -1,1 +1,9 @@
-<p>reminder works!</p>
+<div class="reminders">
+    <h2>Reminders</h2>
+    <ul>
+      <li *ngFor="let reminder of reminders">
+        {{ reminder.item }} - {{ reminder.dueDate | date:'shortDate' }}
+      </li>
+    </ul>
+  </div>
+  

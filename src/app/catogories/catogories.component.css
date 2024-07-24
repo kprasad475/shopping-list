@@ -1,0 +1,9 @@
+
+.categories ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .categories li {
+    cursor: pointer;
+  }

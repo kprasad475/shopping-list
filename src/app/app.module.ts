@@ -8,6 +8,8 @@ import { ItemFormComponent } from './item-form/item-form.component';
 import { CatogoriesComponent } from './catogories/catogories.component';
 import { ReminderComponent } from './reminder/reminder.component';
 import { StoreComponent } from './store/store.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { StoreComponent } from './store/store.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
