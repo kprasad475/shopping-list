@@ -1,9 +1,14 @@
-<div class="reminders">
-    <h2>Reminders</h2>
-    <ul>
-      <li *ngFor="let reminder of reminders">
-        {{ reminder.item }} - {{ reminder.dueDate | date:'shortDate' }}
-      </li>
-    </ul>
-  </div>
-  
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Reminders</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let reminder of reminders">
+        <mat-icon mat-list-icon>alarm</mat-icon>
+        <div mat-line>{{ reminder.itemName }}</div>
+        <div mat-line>Reminder Date: {{ reminder.date | date }}</div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

@@ -1,27 +1,35 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ShoppingItem } from '../shopping-list/shopping-list.component';
+
 
 @Component({
   selector: 'app-item-form',
   templateUrl: './item-form.component.html',
   styleUrl: './item-form.component.css'
 })
-export class ItemFormComponent {
-  @Output () itemAdded = new EventEmitter<any>();
+export class ItemFormComponent  implements OnInit{
+  isEdit: boolean;
+  item: ShoppingItem;
 
-  item = {
-    id: 0,
-    name: '',
-    category: '',
-    quantity: 1,
-    reminder: false
-  };
+  categories: string[] = ['Dairy', 'Bakery', 'Produce', 'Meat', 'Frozen'];
 
-  categories = ['Dairy', 'Bakery', 'Fruits', 'Vegetables'];
+  constructor(
+    public dialogRef: MatDialogRef<ItemFormComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: ShoppingItem
+  ) {}
 
-  onSubmit(){
-    this.item.id = Date.now();
-    this.itemAdded.emit(this.item);
-    this.item = {id:0,name:'',category:'',quantity:1,reminder:false}
+  ngOnInit(): void {
+    this.isEdit = !!this.data;
+    this.item = this.data || { id: Date.now(), name: '', category: '', quantity: 1, purchased: false };
+  }
+
+  submitForm(): void {
+    this.dialogRef.close(this.item);
+  }
+
+  cancel(): void {
+    this.dialogRef.close();
   }
 
 }

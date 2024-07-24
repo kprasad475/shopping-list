@@ -1,9 +1,18 @@
 
-.categories ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .categories li {
-    cursor: pointer;
-  }
+mat-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+mat-list-item {
+  cursor: pointer;
+}
+
+mat-list-item.selected {
+  background-color: #e0f7fa;
+}
+
+mat-icon {
+  margin-right: 16px;
+}

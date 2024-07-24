@@ -1,4 +1,15 @@
-.reminders ul {
-    list-style-type: none;
-    padding: 0;
-  }
+mat-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+mat-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+mat-icon {
+  margin-right: 16px;
+}

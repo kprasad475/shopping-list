@@ -1,9 +1,14 @@
-<div class="store-suggestions">
-    <h2>Store Suggestions</h2>
-    <ul>
-      <li *ngFor="let store of stores">
-        <span>{{ store.name }}</span> - <span>{{ store.location }}</span>
-      </li>
-    </ul>
-  </div>
-  
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Store Suggestions</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let suggestion of storeSuggestions">
+        <mat-icon mat-list-icon>store</mat-icon>
+        <div mat-line>{{ suggestion.storeName }}</div>
+        <div mat-line>Location: {{ suggestion.location }}</div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

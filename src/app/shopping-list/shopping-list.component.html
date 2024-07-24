@@ -1,13 +1,26 @@
 <div class="shopping-list">
-    <h2>Shopping List</h2>
-    <ul>
-      <li *ngFor="let item of items">
-        <span [class.purchased]="item.purchased">{{ item.name }} ({{ item.quantity }})</span>
-        <button (click)="markUsPurchased(item.id)">Mark as {{ item.purchased ? 'Not Purchased' : 'Purchased' }}</button>
-        <button (click)="editItem(item)">Edit</button>
-        <button (click)="deleteItem(item.id)">Delete</button>
-      </li>
-    </ul>
-    <app-item-form (itemAdded)="addItem($event)"></app-item-form>
-  </div>
-  
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Shopping List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="actions">
+        <button mat-raised-button color="primary" (click)="openItemForm()">Add Item</button>
+      </div>
+      <mat-list>
+        <mat-list-item *ngFor="let item of items">
+          <mat-icon mat-list-icon>shopping_cart</mat-icon>
+          <div mat-line>{{ item.name }}</div>
+          <div mat-line>Quantity: {{ item.quantity }}</div>
+          <button mat-icon-button (click)="editItem(item)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteItem(item.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <mat-checkbox [(ngModel)]="item.purchased">Purchased</mat-checkbox>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

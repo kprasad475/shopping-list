@@ -9,6 +9,15 @@ import { CatogoriesComponent } from './catogories/catogories.component';
 import { ReminderComponent } from './reminder/reminder.component';
 import { StoreComponent } from './store/store.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatIconModule} from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+
 
 
 @NgModule({
@@ -23,10 +32,16 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,MatListModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatCheckboxModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
