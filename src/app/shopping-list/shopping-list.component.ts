@@ -93,8 +93,9 @@ if(index !== -1){
 }
   }
 
-  deleteItem(itemId:number){
-    this.items = this.items.filter(item => item.id === itemId)
+ 
+  deleteItem(itemId: number): void {
+    this.items = this.items.filter(item => item.id !== itemId);
   }
 markUsPurchased(itemId:number){
   const  item = this.items.find(item => item.id === itemId);
