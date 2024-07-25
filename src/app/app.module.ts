@@ -16,6 +16,9 @@ import { MatCardModule } from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+import { EditFormComponent } from './edit-form/edit-form.component';
+
 
 
 
@@ -27,7 +30,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ItemFormComponent,
     CatogoriesComponent,
     ReminderComponent,
-    StoreComponent
+    StoreComponent,
+    EditFormComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatInputModule
   ],
   providers: [
     provideClientHydration(),

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ItemFormComponent } from '../item-form/item-form.component';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { EditFormComponent } from '../edit-form/edit-form.component';
 export interface ShoppingItem {
   id: number;
   name: string;
   category: string;
   quantity: number;
   purchased: boolean;
-  reminder:boolean
 }
 
 
@@ -33,6 +33,9 @@ export class ShoppingListComponent  implements OnInit{
     { id: 1, name: 'Milk', category: 'Dairy', quantity: 2, purchased: false },
     { id: 2, name: 'Bread', category: 'Bakery', quantity: 1, purchased: false },
     { id: 3, name: 'Eggs', category: 'Dairy', quantity: 12, purchased: true },
+    { id: 4, name: 'chicken', category: 'meat', quantity: 2, purchased: false },
+    { id: 5, name: 'butter', category: 'diary', quantity: 4, purchased: true },
+    { id: 6, name: 'icecream', category: 'frozen', quantity: 5, purchased: false },
   ];
 
   constructor(private dialog:MatDialog){
@@ -68,11 +71,26 @@ this.items.push(item)
     });
   }
 
-  editItem(updatedItem:any){
-    const index = this.items.findIndex(item => item.id === updatedItem.id);
-    if(index! == -1 ){
-      this.items[index] = updatedItem
-    }
+  editItem(item:ShoppingItem){
+   
+
+    const dialogRef = this.dialog.open(EditFormComponent, {
+      width: '400px',
+      data: item
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Handle the result here
+        this.updateItem(result);
+      }
+    });
+  }
+  updateItem(updatedItem:ShoppingItem){
+const index = this.items.findIndex(item =>item.id === updatedItem.id);
+if(index !== -1){
+  this.items[index] = updatedItem
+}
   }
 
   deleteItem(itemId:number){
