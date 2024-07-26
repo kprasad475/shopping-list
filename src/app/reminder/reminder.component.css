@@ -6,10 +6,14 @@ mat-card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 20px;
+  width:max-content
 }
 
 mat-card-header {
   text-align: center;
+}
+.mdc-list-item.mdc-list-item--with-one-line{
+  height: auto;
 }
 
 mat-card-title {
@@ -18,11 +22,13 @@ mat-card-title {
   color: #333;
 }
 
+
+
 mat-list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 30px 10px;
 }
 
 mat-list-item:not(:last-child) {

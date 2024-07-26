@@ -22,11 +22,16 @@ export class ReminderComponent implements OnInit {
   }
 
   addReminder() {
-    if (this.newReminder.itemName && this.newReminder.date) {
+   
+    if (this.newReminder) {
+      alert('haai')
       this.reminders.push({ ...this.newReminder });
+      console.log(this.reminders)
       this.newReminder = { itemName: '', date: new Date() };
     }
   }
+
+ 
 
   deleteReminder(index: number) {
     this.reminders.splice(index, 1);
