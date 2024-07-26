@@ -1,13 +1,29 @@
+<!-- reminder.component.html -->
 <mat-card>
   <mat-card-header>
     <mat-card-title>Reminders</mat-card-title>
   </mat-card-header>
   <mat-card-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Item Name</mat-label>
+      <input matInput [(ngModel)]="newReminder.itemName">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Reminder Date</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="newReminder.date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addReminder()">Add Reminder</button>
+    
     <mat-list>
-      <mat-list-item *ngFor="let reminder of reminders">
+      <mat-list-item *ngFor="let reminder of reminders; let i = index">
         <mat-icon mat-list-icon>alarm</mat-icon>
         <div mat-line>{{ reminder.itemName }}</div>
         <div mat-line>Reminder Date: {{ reminder.date | date }}</div>
+        <button mat-icon-button color="warn" (click)="deleteReminder(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
       </mat-list-item>
     </mat-list>
   </mat-card-content>

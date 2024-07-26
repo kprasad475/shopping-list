@@ -18,6 +18,12 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { EditFormComponent } from './edit-form/edit-form.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
+
+
 
 
 
@@ -42,11 +48,13 @@ import { EditFormComponent } from './edit-form/edit-form.component';
     MatFormFieldModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent]
 })
