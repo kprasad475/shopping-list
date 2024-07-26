@@ -6,7 +6,7 @@
 
 mat-card {
   padding: 16px;
-  background-color: #f8f9fa;
+  background-color: #ddba99;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
 }

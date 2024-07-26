@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ItemFormComponent } from '../item-form/item-form.component';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { EditFormComponent } from '../edit-form/edit-form.component';
+import { Router } from '@angular/router';
 export interface ShoppingItem {
   id: number;
   name: string;
@@ -38,7 +39,7 @@ export class ShoppingListComponent  implements OnInit{
     { id: 6, name: 'icecream', category: 'frozen', quantity: 5, purchased: false },
   ];
 
-  constructor(private dialog:MatDialog){
+  constructor(private dialog:MatDialog,private router:Router){
 
   }
 
@@ -102,7 +103,12 @@ markUsPurchased(itemId:number){
   if(item){
     item.purchased = !item.purchased
   }
+ 
 }
+navigateToReminder(){
+this.router.navigate(['/reminder'])
+}
+
 
 
 

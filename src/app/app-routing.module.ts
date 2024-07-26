@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ItemFormComponent } from './item-form/item-form.component';
 import { CatogoriesComponent } from './catogories/catogories.component';
+import { ReminderComponent } from './reminder/reminder.component';
 
 const routes: Routes = [ { path: 'shoppinglist', component: ShoppingListComponent },
   { path: 'catogories', component: CatogoriesComponent },
   { path: 'itemform', component: ItemFormComponent },
+  {path:'reminder',component:ReminderComponent},
   { path: '', redirectTo: '/shoppinglist', pathMatch: 'full' }];
 
 @NgModule({

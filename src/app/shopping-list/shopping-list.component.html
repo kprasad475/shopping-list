@@ -7,6 +7,9 @@
       <div class="actions">
         <button mat-raised-button color="primary" (click)="openItemForm()">Add Item</button>
       </div>
+      <div class="actions">
+        <button mat-raised-button color="primary" (click)="navigateToReminder()">Reminder</button>
+      </div>
       <mat-list>
         <mat-list-item *ngFor="let item of items" @fadeInOut>
           <mat-icon mat-list-icon>shopping_cart</mat-icon>
